@@ -40,33 +40,6 @@ const App = () => {
   return (
     <View style={{paddingHorizontal:20,paddingVertical:40,borderRadius:10,borderWidth:1,borderColor:"black"}}>
       <PlayHome/>
-      {/* <TouchableOpacity onPress={()=>TrackPlayer.play()}>
-
-      <View style={{borderWidth:1,borderColor:"black",height:40,borderRadius:10,width:50}}>
-  <Text>Play</Text>
-</View>
-      </TouchableOpacity>
-
-
-<TouchableOpacity onPress={()=>TrackPlayer.pause()}>
-<View style={{borderWidth:1,borderColor:"black",height:40,borderRadius:10,width:50}}>
-  <Text>Pause</Text>
-</View>
-
-</TouchableOpacity>
-
-<TouchableOpacity onPress={()=>TrackPlayer.skipToPrevious()}> 
-<View style={{borderWidth:1,borderColor:"black",height:40,borderRadius:10,width:50}}>
-  <Text>Previous</Text>
-</View>
-</TouchableOpacity>
-
-<TouchableOpacity onPress={()=>TrackPlayer.skipToNext()}>
-<View style={{borderWidth:1,borderColor:"black",height:40,borderRadius:10,width:50}}>
-  <Text>Next</Text>
-</View>
-</TouchableOpacity> */}
-
     </View>
   )
 }
