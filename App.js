@@ -8,38 +8,53 @@ const App = () => {
   const width = Dimensions.get("window").width
   const height = Dimensions.get("window").height
 
-  const tracks = [
-    {
-      id:1,
-      url:require('./components/tracks/sound1.mp3'),
-      title:"Bass Boost Beat"
-    },
-    {
-      id:2,
-      url:require('./components/tracks/sound1.mp3'),
-      title:"Bass Boost Beat 2"
-    }
-  ]
 
-  const setUpTrackPlayer = async()=>{
-    try {
-      await TrackPlayer.setupPlayer();
-      await TrackPlayer.add(tracks)
-    } catch (error) {
-      Alert.alert(error)
-    }
-  }
+  // const setUpTrackPlayer = async()=>{
+  //   try {
+  //     await TrackPlayer.setupPlayer();
+  //     await TrackPlayer.add(tracks)
+  //   } catch (error) {
+  //     Alert.alert(error)
+  //   }
+  // }
 
-  useEffect(() => {
-    setUpTrackPlayer();
+  // useEffect(() => {
+  //   setUpTrackPlayer();
 
-    return ()=>TrackPlayer.destroy()
-  }, [])
+  //   return ()=>TrackPlayer.destroy()
+  // }, [])
   
   
   return (
     <View style={{paddingHorizontal:20,paddingVertical:40,borderRadius:10,borderWidth:1,borderColor:"black"}}>
       <PlayHome/>
+
+        {/* <TouchableOpacity onPress={()=>TrackPlayer.play()}>
+
+      <View style={{borderWidth:1,borderColor:"black",height:40,borderRadius:10,width:50}}>
+  <Text>Play</Text>
+</View>
+      </TouchableOpacity>
+
+
+<TouchableOpacity onPress={()=>TrackPlayer.pause()}>
+<View style={{borderWidth:1,borderColor:"black",height:40,borderRadius:10,width:50}}>
+  <Text>Pause</Text>
+</View>
+
+</TouchableOpacity>
+
+<TouchableOpacity onPress={()=>TrackPlayer.skipToPrevious()}> 
+<View style={{borderWidth:1,borderColor:"black",height:40,borderRadius:10,width:50}}>
+  <Text>Previous</Text>
+</View>
+</TouchableOpacity>
+
+<TouchableOpacity onPress={()=>TrackPlayer.skipToNext()}>
+<View style={{borderWidth:1,borderColor:"black",height:40,borderRadius:10,width:50}}>
+  <Text>Next</Text>
+</View>
+</TouchableOpacity> */}
     </View>
   )
 }
