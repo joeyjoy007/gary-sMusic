@@ -4,12 +4,16 @@ import TrackPlayer from 'react-native-track-player'
 
 import React, { useEffect, useState } from 'react'
 
+
 const PlayHome = () => {
 
-    const circleHeight=Dimensions.get("window").height;
-    const innerCircleWidth=Dimensions.get("window").width;
+    // const circleHeight=Dimensions.get("window").height;
+    // const innerCircleWidth=Dimensions.get("window").width;
+
+    // const progress = useProgress()
 
     const [play, setPlay] = useState(false)
+    // const [objects, setObjects] = useState("")
 
     const track = [
       {
@@ -29,7 +33,7 @@ const PlayHome = () => {
         await TrackPlayer.setupPlayer();
         await TrackPlayer.add(track)
       } catch (error) {
-       
+       console.log(error)
       }
     }
 
@@ -53,6 +57,34 @@ const PlayHome = () => {
         
       }
     }
+
+    const PreviousTrack = ()=>{
+      try {
+        TrackPlayer.skipToPrevious()
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    
+    const NextTrack = ()=>{
+      try {
+        TrackPlayer.skipToNext()
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+  //   let trackIndex =async () => {
+  //   const u = await TrackPlayer.getCurrentTrack()
+  //   const i = await TrackPlayer.getTrack()
+      
+
+    
+  // }
+
+    // useEffect(() => {
+    //   trackIndex()
+    // }, [play])
     
 
   return (
@@ -81,7 +113,7 @@ const PlayHome = () => {
       </View>
 
       <View style={{display:"flex",flexDirection:"row",justifyContent:"space-around",marginTop:50}}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>PreviousTrack()}>
         <Text>{<Previous name="previous" size={30}/>}</Text>
         </TouchableOpacity>
        <TouchableOpacity onPress={()=>plays()}>
@@ -89,9 +121,19 @@ const PlayHome = () => {
        (<Text>{<Pause name="pause" size={30}/>}</Text>) : <Text>{<Play name="play" size={30}/>}</Text>}
        </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>NextTrack()}>
         <Text>{<Next name='next' size={30}/>}</Text>
         </TouchableOpacity>
+      </View>
+
+
+      <View>
+        {/* <Text>{(progress.position)}</Text> */}
+        {/* <ProgressBar
+                    progress={progress.position}
+                    buffered={progress.buffered}
+                /> */}
+                <Text>kuj</Text>
       </View>
 
       <View>

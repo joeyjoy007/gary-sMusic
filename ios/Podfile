@@ -21,6 +21,8 @@ target 'garyMusic' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'rn-fetch-blob', :path => '../node_modules/rn-fetch-blob'
+
   target 'garyMusicTests' do
     inherit! :complete
     # Pods for testing
